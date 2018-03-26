@@ -161,3 +161,24 @@ for(var i=0;i<RomaFirenze.length;i++){
 console.log("IL PRIMO TRENO CHE PARTE DA ROMA PER FIRENZE E' ID::", RomaFirenze[p].codice_id, "alle ore::", primaPartenza );
 console.log("IL  TRENO PIU' VELOCE CHE PARTE DA ROMA PER FIRENZE E' ID::",  RomaFirenze[m].codice_id,  "alle ore::",  RomaFirenze[m].orario );
 console.log("IL  TRENO CON PIU' POSTI LIBERI CHE PARTE DA ROMA PER FIRENZE E' ID::", RomaFirenze[k].codice_id, "alle ore::", RomaFirenze[k].orario );
+
+//Prenotazione
+//i questo caso le stazioni di partenza per semplificare da scegliere saranno solo Roma o Milano
+//le opzioni di ricerca sono , trano che parte prima o treno piu' veloce;
+var search=["primaPartenza", "minDurata"];
+var stazione=prompt("inserisci la stazione da dove vuoi partire::");
+var destinazione=prompt("inserisci la destinazione::");
+
+var codicePrenotazione=[];
+
+  var ricerca=prompt("inserisci il criterio di ricerca fra quelle suggerite dal software");
+  if(ricerca=="primaPartenza"){
+    RomaFirenze[p].postiLiberi--;
+  }
+  else if(ricerca=="minDurata"){
+    RomaFirenze[m].postiLiberi--;
+    console.log("il treno che hai scelto e' :: id ", RomaFirenze[m].codice_id, "alle ore: ", RomaFirenze[m].orario );
+  }
+  else {
+    alert("inserisci un  criterio di ricerca fra quelle suggerite dal software, premi ok, e reinserisci i dati");
+  }
