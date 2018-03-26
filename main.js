@@ -20,9 +20,6 @@ Roma e va a Firenze,con le seguenti caratteristiche
 C) Prenotazione: chiedere al'utente la stazione di partenza, la stazione di arrivo e il modo di ricerca.
 Il modo di ricerca può essere una delle opzioni del punto B.
 Il software deve individuare il treno con le caratteristiche scelte dall'utente che abbiamo posti liberi,
-
-
-
 decrementare il numero di posti liberi e generare un Codice Prenotazione di 6 caratteri alfanumerici casuali.
 */
 
@@ -41,10 +38,7 @@ for(var i=0;i<10;i++){
   }
   RomaFirenze[i]=treno;
   MilanoRoma[i]=treno;
-
-
 }
-
 
 var i=0;
 do{
@@ -102,33 +96,61 @@ console.log("IL  TRENO CON PIU' POSTI LIBERI CHE PARTE DA ROMA PER FIRENZE E' ID
 //i questo caso le stazioni di partenza per semplificare da scegliere saranno solo Roma o Milano
 //le opzioni di ricerca sono , trano che parte prima o treno piu' veloce;
 var search=["primaPartenza", "minDurata"];
-var stazione=prompt("inserisci la stazione da dove vuoi partire:(scegli tra Roma o Milano):");
-var destinazione=prompt("inserisci la destinazione::");
 
-//creo un array vuoto dove vado a memorizzare il codice della prenotazione
+
 var control=false;
-var codicePrenotazione=[];
+
+//istruzione do-while, il prog verifica il criterio di ricerca
 do{
-  var ricerca=prompt("inserisci il criterio di ricerca fra quelle suggerite dal software");
+  var stazione=prompt("inserisci la stazione da dove vuoi partire:(scegli tra Roma o Milano):");
+  var destinazione=prompt("inserisci la destinazione::");
+
+  var ricerca=prompt("inserisci il criterio di ricerca fra quelle suggerite dal software, primaPartenza o minDirata");
   if(ricerca=="primaPartenza"){
     RomaFirenze[p].postiLiberi--;
     conrol=true;
   }
   else if(ricerca=="minDurata"){
     RomaFirenze[m].postiLiberi--;
-
     conrol=true;
   }
   else {
     alert("inserisci un  criterio di ricerca fra quelle suggerite dal software, premi ok, e reinserisci i dati");
     var control=false;
-
   }
 }while(control=false)
+
+var codicePrenotazione=alfanumerico();
+//creo un array vuoto dove vado a memorizzare il codice della prenotazione
 
 if(ricerca=="primaPartenza"){
   console.log("il treno che hai scelto e' :: id ", RomaFirenze[m].codice_id, "alle ore: ", RomaFirenze[m].orario );
 }
 else if(ricerca=="minDurata"){
   console.log("il treno che hai scelto e' :: id ", RomaFirenze[p].codice_id, "alle ore: ", RomaFirenze[p].orario );
+}
+console.log("il codice della prenotazione::", codicePrenotazione);
+
+
+
+
+
+
+
+
+function alfanumerico(){
+  var array=[];
+  var casualarray=[];
+  for(var i='a';i<'z';i++){
+    array[i]=i;
+  }
+  for(var i=0;i<10;i++){
+    array[i]=i;
+  }
+  for(var i=0;i<6;i++){
+    casualarray.push(Math.floor(Math.random()*array.length)+1)
+  }
+  return casualarray.join(" ");
+
+
 }
