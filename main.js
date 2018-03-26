@@ -27,7 +27,7 @@ decrementare il numero di posti liberi e generare un Codice Prenotazione di 6 ca
 */
 
 //creo un un oggetto treno vuoto
-var treno={
+var treno1={
   "codice_id":" ",
   "st_partenza":" ",
   "st_arrivo": " ",
@@ -35,22 +35,103 @@ var treno={
   "orario" : " ",
   "postiLiberi": " "
 }
-
+var treno2={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
+var treno3={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
+var treno4={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
+var treno5={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
+var treno6={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
+var treno7={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
+var treno8={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
+var treno9={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
+var treno10={
+  "codice_id":" ",
+  "st_partenza":" ",
+  "st_arrivo": " ",
+  "durata":" ",
+  "orario" : " ",
+  "postiLiberi": " "
+}
 //creo due array vuoti dove vado a memorizzare i dati dei treni;
-var RomaFirenze=[];
-var MilanoRoma[];
+var RomaFirenze=[treno1,treno2, treno3, treno4, treno5, treno6, treno7, treno8, treno9, treno10 ];
+var MilanoRoma=[treno1,treno2, treno3, treno4, treno5, treno6, treno7, treno8, treno9, treno10 ];
 var i=0;
 do{
-  for(var k=0;k<10;k++ ){
-    
+  for(i=0;i<10;i++ ){
+    RomaFirenze[i].codice_id=(Math.floor(Math.random()*10000)+1);
+    RomaFirenze[i].st_partenza=("Roma");
+    RomaFirenze[i].st_arrivo=("Firenze");
+    RomaFirenze[i].durata=(Math.floor(Math.random()*60)+31);
+    RomaFirenze[i].orario=Math.floor((Math.random()*24)+1), + ":", + (Math.floor((Math.random()*60)+1));
+    RomaFirenze[i].postiLiberi=(Math.floor(Math.random()*450)+1);
+
+
+    MilanoRoma[i].codice_id=(Math.floor(Math.random()*10000)+1);
+    MilanoRoma[i].st_partenza=("Milano");
+    MilanoRoma[i].st_arrivo=("Roma");
+    MilanoRoma[i].durata=(Math.floor(Math.random()*60)+31);
+    MilanoRoma[i].orario=Math.floor((Math.random()*24)+1), + ":", + (Math.floor((Math.random()*60)+1));
+    MilanoRoma[i].postiLiberi=(Math.floor(Math.random()*450)+1);
+
+
 
   }
-
+  i++;
 }while(i<10)
-
-
-function generaArray(){
-
-
-
-}
+console.log("treni da roma a firenze : ", RomaFirenze)
+console.log("treni da milano a Roma ", MilanoRoma)
