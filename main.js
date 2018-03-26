@@ -11,8 +11,8 @@ Un treno è rappresentato dalle seguenti caratteristiche:
 A) Generare 10 treni in partenza da Roma e in arrivo a firenze e 10 treni in partenza da milano e in arrivo a Roma
 Non devono essere generati a mano, ma con cicli che creino dei valori plausibili per ogni dato
 
-B) Stampare il numero identificativo e l'orario di partenza di un treno che da Roma e va a Firenze,
-con le seguenti caratteristiche
+B) Stampare il numero identificativo e l'orario di partenza di un treno che da
+Roma e va a Firenze,con le seguenti caratteristiche
  1) Quello che parte prima
  2) Quello che ci mette meno
  3) Quello più vuoto
@@ -26,7 +26,7 @@ Il software deve individuare il treno con le caratteristiche scelte dall'utente 
 decrementare il numero di posti liberi e generare un Codice Prenotazione di 6 caratteri alfanumerici casuali.
 */
 
-//creo un un oggetto treno vuoto
+//creo 10 oggetti treno vuoti
 var treno1={
   "codice_id":" ",
   "st_partenza":" ",
@@ -113,25 +113,51 @@ var MilanoRoma=[treno1,treno2, treno3, treno4, treno5, treno6, treno7, treno8, t
 var i=0;
 do{
   for(i=0;i<10;i++ ){
+//istruzioni che creano 10 treni da Milano a Roma
     RomaFirenze[i].codice_id=(Math.floor(Math.random()*10000)+1);
     RomaFirenze[i].st_partenza=("Roma");
     RomaFirenze[i].st_arrivo=("Firenze");
     RomaFirenze[i].durata=(Math.floor(Math.random()*60)+31);
-    RomaFirenze[i].orario=Math.floor((Math.random()*24)+1), + ":", + (Math.floor((Math.random()*60)+1));
+    RomaFirenze[i].orario=Math.floor((Math.random()*24)+1) + (":") + (Math.floor((Math.random()*60)+1));
     RomaFirenze[i].postiLiberi=(Math.floor(Math.random()*450)+1);
 
-
+//istruzioni che creano 10 treni da Milano a Roma
     MilanoRoma[i].codice_id=(Math.floor(Math.random()*10000)+1);
     MilanoRoma[i].st_partenza=("Milano");
     MilanoRoma[i].st_arrivo=("Roma");
     MilanoRoma[i].durata=(Math.floor(Math.random()*60)+31);
-    MilanoRoma[i].orario=Math.floor((Math.random()*24)+1), + ":", + (Math.floor((Math.random()*60)+1));
+    MilanoRoma[i].orario=Math.floor((Math.random()*24)+1) + (":") + (Math.floor((Math.random()*60)+1));
     MilanoRoma[i].postiLiberi=(Math.floor(Math.random()*450)+1);
-
-
 
   }
   i++;
 }while(i<10)
-console.log("treni da roma a firenze : ", RomaFirenze)
-console.log("treni da milano a Roma ", MilanoRoma)
+
+console.log("treni da roma a firenze : ", RomaFirenze);
+console.log("treni da milano a Roma ", MilanoRoma);
+
+//istruzioni che stampano i dati di un treno che parte da Roma e va a Firenze;
+var primaPartenza=(24 + ":" + 59);
+var p=0;
+var minDurata=90;
+var m=0;
+var postiLib=450;
+var k=0;
+
+for(var i=0;i<RomaFirenze.length;i++){
+  if(primaPartenza>RomaFirenze[i].orario){
+    primaPartenza=RomaFirenze[i].orario;
+    p++;
+  }
+  if(minDurata>RomaFirenze[i].durata){
+    minDurata=RomaFirenze[i].durata;
+    m++;
+  }
+  if(postiLib>RomaFirenze[i].postiLiberi){
+    postiLib=RomaFirenze[i].postiLiberi
+    k++;
+  }
+}
+console.log("IL PRIMO TRENO CHE PARTE DA ROMA PER FIRENZE E' ID::", RomaFirenze[p].codice_id, "alle ore::", primaPartenza );
+console.log("IL  TRENO PIU' VELOCE CHE PARTE DA ROMA PER FIRENZE E' ID::",  RomaFirenze[m].codice_id,  "alle ore::",  RomaFirenze[m].orario );
+console.log("IL  TRENO CON PIU' POSTI LIBERI CHE PARTE DA ROMA PER FIRENZE E' ID::", RomaFirenze[k].codice_id, "alle ore::", RomaFirenze[k].orario );
