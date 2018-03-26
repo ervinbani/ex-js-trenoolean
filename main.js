@@ -27,89 +27,25 @@ decrementare il numero di posti liberi e generare un Codice Prenotazione di 6 ca
 */
 
 //creo 10 oggetti treno vuoti
-var treno1={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno2={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno3={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno4={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno5={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno6={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno7={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno8={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno9={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
-var treno10={
-  "codice_id":" ",
-  "st_partenza":" ",
-  "st_arrivo": " ",
-  "durata":" ",
-  "orario" : " ",
-  "postiLiberi": " "
-}
 //creo due array vuoti dove vado a memorizzare i dati dei treni;
-var RomaFirenze=[treno1,treno2, treno3, treno4, treno5, treno6, treno7, treno8, treno9, treno10 ];
-var MilanoRoma=[treno1,treno2, treno3, treno4, treno5, treno6, treno7, treno8, treno9, treno10 ];
+var RomaFirenze=[ ];
+var MilanoRoma=[ ];
+for(var i=0;i<10;i++){
+  var treno={
+    "codice_id":" ",
+    "st_partenza":" ",
+    "st_arrivo": " ",
+    "durata":" ",
+    "orario" : " ",
+    "postiLiberi": " "
+  }
+  RomaFirenze[i]=treno;
+  MilanoRoma[i]=treno;
+
+
+}
+
+
 var i=0;
 do{
   for(i=0;i<10;i++ ){
