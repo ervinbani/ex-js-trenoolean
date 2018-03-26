@@ -166,19 +166,33 @@ console.log("IL  TRENO CON PIU' POSTI LIBERI CHE PARTE DA ROMA PER FIRENZE E' ID
 //i questo caso le stazioni di partenza per semplificare da scegliere saranno solo Roma o Milano
 //le opzioni di ricerca sono , trano che parte prima o treno piu' veloce;
 var search=["primaPartenza", "minDurata"];
-var stazione=prompt("inserisci la stazione da dove vuoi partire::");
+var stazione=prompt("inserisci la stazione da dove vuoi partire:(scegli tra Roma o Milano):");
 var destinazione=prompt("inserisci la destinazione::");
 
+//creo un array vuoto dove vado a memorizzare il codice della prenotazione
+var control=false;
 var codicePrenotazione=[];
-
+do{
   var ricerca=prompt("inserisci il criterio di ricerca fra quelle suggerite dal software");
   if(ricerca=="primaPartenza"){
     RomaFirenze[p].postiLiberi--;
+    conrol=true;
   }
   else if(ricerca=="minDurata"){
     RomaFirenze[m].postiLiberi--;
-    console.log("il treno che hai scelto e' :: id ", RomaFirenze[m].codice_id, "alle ore: ", RomaFirenze[m].orario );
+
+    conrol=true;
   }
   else {
     alert("inserisci un  criterio di ricerca fra quelle suggerite dal software, premi ok, e reinserisci i dati");
+    var control=false;
+
   }
+}while(control=false)
+
+if(ricerca=="primaPartenza"){
+  console.log("il treno che hai scelto e' :: id ", RomaFirenze[m].codice_id, "alle ore: ", RomaFirenze[m].orario );
+}
+else if(ricerca=="minDurata"){
+  console.log("il treno che hai scelto e' :: id ", RomaFirenze[p].codice_id, "alle ore: ", RomaFirenze[p].orario );
+}
