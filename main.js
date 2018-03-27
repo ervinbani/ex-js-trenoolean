@@ -135,22 +135,17 @@ console.log("il codice della prenotazione::", codicePrenotazione);
 
 
 
-
-
-
 function alfanumerico(){
-  var array=[];
   var casualarray=[];
-  for(var i='a';i<'z';i++){
-    array[i]=i;
-  }
+  var array=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q","R", "S", "T", "U", "V", "W", "X", "Y", "Z",0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   for(var i=0;i<10;i++){
     array[i]=i;
   }
   for(var i=0;i<6;i++){
-    casualarray.push(Math.floor(Math.random()*array.length)+1)
+    casualarray.push(array[Math.floor(Math.random()*array.length)+1]);
   }
-  return casualarray.join(" ");
+  return casualarray.join("");
 
 
 }
